@@ -6659,13 +6659,13 @@ exports.default = void 0;
 
 var _constants = _interopRequireDefault(__webpack_require__(396));
 
-var _typeforce = __webpack_require__(172);
+var _typeforce = _interopRequireDefault(__webpack_require__(172));
 
 var register = function register(code, precision) {
   _constants.default.COINS[code] = code.toUpperCase();
   _constants.default.COINS_PRECISION[code.toUpperCase()] = precision;
-  _typeforce.isCoinAddress[code.toUpperCase()] = _typeforce.isCoinAddress.ETH;
-  _typeforce.isPublicKey[code.toUpperCase()] = _typeforce.isPublicKey.ETH;
+  _typeforce.default.isCoinAddress[code.toUpperCase()] = _typeforce.default.isCoinAddress.ETH;
+  _typeforce.default.isPublicKey[code.toUpperCase()] = _typeforce.default.isPublicKey.ETH;
 };
 
 var _default = {
@@ -31233,7 +31233,7 @@ var _swap5 = __webpack_require__(3656);
 
 var _swap6 = __webpack_require__(3671);
 
-var _util = __webpack_require__(837);
+var _util = _interopRequireDefault(__webpack_require__(837));
 
 /* eslint-disable import/no-mutable-exports,max-len */
 var repo = _helpers.utils.createRepo();
@@ -31245,7 +31245,7 @@ if (_appConfig.default && _appConfig.default.isWidget) {
   if (!_swap.constants.COINS[_appConfig.default.erc20token]) {
     console.log('init token', _appConfig.default.erc20token, _appConfig.default.erc20);
 
-    _util.erc20.register(_appConfig.default.erc20token, _appConfig.default.erc20[_appConfig.default.erc20token].decimals);
+    _util.default.erc20.register(_appConfig.default.erc20token, _appConfig.default.erc20[_appConfig.default.erc20token].decimals);
   }
 } else {
   // Add to swap.core not exists tokens
@@ -31253,7 +31253,7 @@ if (_appConfig.default && _appConfig.default.isWidget) {
     if (!_swap.constants.COINS[tokenCode]) {
       console.info('Add token to swap.core', tokenCode, _appConfig.default.erc20[tokenCode].address, _appConfig.default.erc20[tokenCode].decimals, _appConfig.default.erc20[tokenCode].fullName);
 
-      _util.erc20.register(tokenCode, _appConfig.default.erc20[tokenCode].decimals);
+      _util.default.erc20.register(tokenCode, _appConfig.default.erc20[tokenCode].decimals);
     }
   });
 }
