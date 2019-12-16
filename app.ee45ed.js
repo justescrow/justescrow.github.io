@@ -1378,7 +1378,6 @@ function (_React$PureComponent) {
               invoiceData = _this.props.invoiceData;
               withdrawModalType = _helpers.constants.modals.Withdraw;
               btcData = _actions.default.btcmultisig.isBTCAddress(invoiceData.toAddress);
-              console.log(btcData, invoiceData);
 
               if (btcData) {
                 currency = btcData.currency;
@@ -1401,7 +1400,7 @@ function (_React$PureComponent) {
                 });
               }
 
-            case 5:
+            case 4:
             case "end":
               return _context2.stop();
           }
@@ -1464,12 +1463,15 @@ function (_React$PureComponent) {
       var _this$props = _this.props,
           date = _this$props.date,
           hiddenList = _this$props.hiddenList,
-          onSubmit = _this$props.onSubmit;
+          onSubmit = _this$props.onSubmit,
+          invoiceData = _this$props.invoiceData;
       var ind = _this.state.ind;
       var commentDate = (0, _momentWithLocalesEs.default)(date).format('LLLL');
-      onSubmit(_objectSpread({}, hiddenList, (0, _defineProperty2.default)({}, ind, commentDate)));
+      var commentLabel = invoiceData && invoiceData.label;
+      var fullComment = "".concat(commentDate, "  ").concat(commentLabel);
+      onSubmit(_objectSpread({}, hiddenList, (0, _defineProperty2.default)({}, ind, fullComment)));
 
-      _this.changeComment(commentDate);
+      _this.changeComment(fullComment);
 
       _this.toggleComment(false);
     });
@@ -1544,7 +1546,7 @@ function (_React$PureComponent) {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("tr", {
         styleName: "historyRow"
       }, _react.default.createElement("td", null, _react.default.createElement("div", {
-        styleName: statusStyleName
+        styleName: "".concat(statusStyleAmount, " circleIcon")
       }, _react.default.createElement("div", {
         styleName: "arrowWrap"
       }, _react.default.createElement("svg", {
@@ -1596,6 +1598,7 @@ function (_React$PureComponent) {
       })))), _react.default.createElement(_Comment.default, (0, _extends2.default)({
         isOpen: isOpen,
         comment: comment,
+        label: invoiceData && invoiceData.label,
         commentCancel: this.commentCancel,
         ind: ind,
         submit: onSubmit,
@@ -1659,7 +1662,7 @@ exports.default = _default;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"status":"B1fidjHPLhyGcoH8F5fGa","in":"_2WudR1frvBnj9kRO3FA9uG","arrowWrap":"_2ZtiIK3MNLzfrPdj9NR9bH","amount":"z9kssebSLkb8mADtAMWnq","out":"_3MGYaPvMhKsrx0_2-cz4vY","self":"_3MS0sH9FgE888Im5g8g2xg","cell":"_3iy6qiQe218Jih154eQVqE","confirm":"_38S3z2lx-rEz9afrkb9EwC","directionHeading":"_3KSEtr_YlbeqTSg-hXk1Ud","unconfirmed":"_2NV1PPhBfGGuyaPXmSlHdC","date":"_3qRLEPOS08JmoONhhzwZEV","address":"qb31A4v3_wPcuRk6u7OaR","amountUsd":"vYdnMoTrMzp21MwqWA9rf","historyInfo":"_8DegK4QSt4Uge7u8tvQVq","info":"YgKzn1hJy3aGY2rWbwSF1","comment":"_2xEACUYkNDCkFn1razTQHj","btnWrapper":"_21DXC0zbdv8AGQ3A19RwM_","icon":"_3pEEj8MTTYSzn-t4UI3wER","historyRow":"dtzaHAhIbDqlX5-GVeT2g","input":"_1m9GCgCW0S2t8QjfalrCbA","green":"_1RCXF-OwSr7B1HY7mxNdci","historyInvoiceInfo":"_12ebNK544EWCm0wA59ow84"};
+module.exports = {"status":"B1fidjHPLhyGcoH8F5fGa","in":"_2WudR1frvBnj9kRO3FA9uG","arrowWrap":"_2ZtiIK3MNLzfrPdj9NR9bH","amount":"z9kssebSLkb8mADtAMWnq","out":"_3MGYaPvMhKsrx0_2-cz4vY","self":"_3MS0sH9FgE888Im5g8g2xg","cell":"_3iy6qiQe218Jih154eQVqE","confirm":"_38S3z2lx-rEz9afrkb9EwC","directionHeading":"_3KSEtr_YlbeqTSg-hXk1Ud","unconfirmed":"_2NV1PPhBfGGuyaPXmSlHdC","date":"_3qRLEPOS08JmoONhhzwZEV","address":"qb31A4v3_wPcuRk6u7OaR","amountUsd":"vYdnMoTrMzp21MwqWA9rf","historyInfo":"_8DegK4QSt4Uge7u8tvQVq","info":"YgKzn1hJy3aGY2rWbwSF1","comment":"_2xEACUYkNDCkFn1razTQHj","btnWrapper":"_21DXC0zbdv8AGQ3A19RwM_","icon":"_3pEEj8MTTYSzn-t4UI3wER","historyRow":"dtzaHAhIbDqlX5-GVeT2g","input":"_1m9GCgCW0S2t8QjfalrCbA","submit":"_242JysLjCqRwNfH_8yfbw-","close":"_3WwpAw7B9lJw_hTslXlfDO","historyInvoiceInfo":"_12ebNK544EWCm0wA59ow84","circleIcon":"_2baEQItv0tI6OS12JdH4sE"};
 
 /***/ }),
 
@@ -2051,13 +2054,15 @@ function BalanceForm(_ref) {
       currencyBalance = _ref.currencyBalance,
       handleReceive = _ref.handleReceive,
       handleWithdraw = _ref.handleWithdraw,
-      currency = _ref.currency;
+      currency = _ref.currency,
+      infoAboutCurrency = _ref.infoAboutCurrency;
 
   var _useState = (0, _react.useState)('usd'),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       activeCurrency = _useState2[0],
       setActiveCurrency = _useState2[1];
 
+  console.log('usdBalane', usdBalance);
   return _react.default.createElement("div", {
     styleName: "yourBalance"
   }, _react.default.createElement("div", {
@@ -2066,7 +2071,7 @@ function BalanceForm(_ref) {
     styleName: "yourBalanceDescr"
   }, "Your total balance"), _react.default.createElement("div", {
     styleName: "yourBalanceValue"
-  }, activeCurrency === 'usd' ? _react.default.createElement("p", null, usdBalance !== null ? usdBalance.toFixed(2) : 0) : _react.default.createElement("p", null, parseFloat(currencyBalance).toFixed(5)), _react.default.createElement("span", null, "+0.0%")), _react.default.createElement("div", {
+  }, activeCurrency === 'usd' ? _react.default.createElement("p", null, !isNaN(usdBalance) ? usdBalance.toFixed(2) : '') : _react.default.createElement("p", null, parseFloat(currencyBalance).toFixed(5)), infoAboutCurrency ? _react.default.createElement("span", null, "+0.0%") : ''), _react.default.createElement("div", {
     styleName: "yourBalanceCurrencies"
   }, _react.default.createElement("button", {
     styleName: activeCurrency === 'usd' && 'active',
@@ -25982,6 +25987,7 @@ var submitComment = function submitComment(e, props) {
 
 var CommentRow = function CommentRow(props) {
   var comment = props.comment,
+      label = props.label,
       toggleComment = props.toggleComment,
       changeComment = props.changeComment,
       date = props.date,
@@ -25994,21 +26000,22 @@ var CommentRow = function CommentRow(props) {
     }
   }, _react.default.createElement("input", {
     type: "text",
-    defaultValue: comment || (0, _momentWithLocalesEs.default)(date).format('LLLL'),
+    defaultValue: comment || "".concat((0, _momentWithLocalesEs.default)(date).format('LLLL'), "  ").concat(label),
     onChange: changeComment
   }), _react.default.createElement("span", {
-    styleName: "green",
+    styleName: "submit",
     onClick: function onClick(e) {
       return submitComment(e, props);
     }
   }, "\u2714"), _react.default.createElement("span", {
+    styleName: "close",
     onClick: commentCancel
   }, "\xD7")) : _react.default.createElement("div", {
     styleName: "date",
     onDoubleClick: function onDoubleClick() {
       return toggleComment(true);
     }
-  }, comment || (0, _momentWithLocalesEs.default)(date).format('LLLL'));
+  }, comment || "".concat((0, _momentWithLocalesEs.default)(date).format('LLLL'), "  ").concat(label));
 };
 
 var _default = (0, _reactCssModules.default)(CommentRow, _Row.default, {
@@ -27747,6 +27754,7 @@ function (_Component) {
       var _this$props4 = this.props,
           items = _this$props4.items,
           tokens = _this$props4.tokens,
+          currencyBalance = _this$props4.currencyBalance,
           hiddenCoinsList = _this$props4.hiddenCoinsList,
           isSigned = _this$props4.isSigned,
           allData = _this$props4.allData;
@@ -27760,15 +27768,15 @@ function (_Component) {
         slidesToScroll: 1
       };
       var btcBalance = null;
-      var usdBalance = null;
+      var usdBalance = 0;
       var tableRows = allData.filter(function (_ref6) {
         var currency = _ref6.currency,
             balance = _ref6.balance;
         return !hiddenCoinsList.includes(currency) || balance > 0;
       });
 
-      if (infoAboutCurrency) {
-        infoAboutCurrency.forEach(function (item) {
+      if (currencyBalance) {
+        currencyBalance.forEach(function (item) {
           btcBalance += item.balance;
           usdBalance = btcBalance * exCurrencyRate;
         });
@@ -27837,7 +27845,8 @@ function (_Component) {
         currencyBalance: btcBalance,
         handleReceive: this.handleModalOpen,
         handleWithdraw: this.handleModalOpen,
-        currency: "btc"
+        currency: "btc",
+        infoAboutCurrency: infoAboutCurrency
       }), exchangeForm && _react.default.createElement("div", {
         styleName: "exchangeForm"
       }, _react.default.createElement(_PartialClosure.default, (0, _extends2.default)({}, this.props, {
@@ -28583,11 +28592,11 @@ function (_Component) {
         name: currency
       })), _react.default.createElement("div", {
         styleName: "assetsTableInfo"
+      }, _react.default.createElement("div", {
+        styleName: "nameRow"
       }, _react.default.createElement(_reactRouterDom.Link, {
         to: (0, _locale.localisedUrl)(locale, "/".concat(fullName, "-wallet")),
         title: "Online ".concat(fullName, " wallet")
-      }, _react.default.createElement("div", {
-        styleName: "nameRow"
       }, balanceError && nodeDownErrorShow && _react.default.createElement("div", {
         className: _Row.default.errorMessage
       }, fullName, _react.default.createElement(_reactIntl.FormattedMessage, {
@@ -28598,7 +28607,7 @@ function (_Component) {
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "RowWallet282",
         defaultMessage: "Need help?"
-      }))) || fullName, _react.default.createElement(_PartOfAddress.default, item))), _react.default.createElement("span", null, !isBalanceFetched || isBalanceFetching ? this.props.item.isUserProtected && !this.props.item.active ? _react.default.createElement("span", null, _react.default.createElement(_reactIntl.FormattedMessage, {
+      }))) || fullName), _react.default.createElement(_PartOfAddress.default, item)), _react.default.createElement("span", null, !isBalanceFetched || isBalanceFetching ? this.props.item.isUserProtected && !this.props.item.active ? _react.default.createElement("span", null, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "walletMultisignNotJoined",
         defaultMessage: "Not joined"
       })) : _react.default.createElement("div", {
