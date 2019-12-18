@@ -4996,8 +4996,8 @@ var sign = function sign() {
 
         case 25:
           _btcPrivateKey = _context.t1;
-          _btcMultisigSMSPrivateKey = _actions.default.btcmultisig.login_SMS(btcPrivateKey, btcMultisigSMSOwnerKey);
-          _btcMultisigPrivateKey = _actions.default.btcmultisig.login_USER(btcPrivateKey, btcMultisigOwnerKey);
+          _btcMultisigSMSPrivateKey = _actions.default.btcmultisig.login_SMS(_btcPrivateKey, btcMultisigSMSOwnerKey);
+          _btcMultisigPrivateKey = _actions.default.btcmultisig.login_USER(_btcPrivateKey, btcMultisigOwnerKey);
 
           _actions.default.bch.login(bchPrivateKey); // actions.usdt.login(btcPrivateKey)
 
@@ -7293,6 +7293,8 @@ var login = function login(privateKey) {
     name: 'btcData',
     data: data
   });
+
+  return privateKey;
 };
 
 var loginWithKeychain = function loginWithKeychain() {
