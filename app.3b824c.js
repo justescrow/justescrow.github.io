@@ -1221,37 +1221,11 @@ function (_React$PureComponent) {
 
     (0, _classCallCheck2.default)(this, Row);
     _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Row).call(this));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "getUsdBalance", function _callee() {
-      var type, exCurrencyRate;
+    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "handlePayInvoice", function _callee() {
+      var invoiceData, withdrawModalType, data, btcData, currency, ethData;
       return _regenerator.default.async(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
-            case 0:
-              type = _this.props.type;
-              _context.next = 3;
-              return _regenerator.default.awrap(_actions.default.user.getExchangeRate(type, 'usd'));
-
-            case 3:
-              exCurrencyRate = _context.sent;
-
-              _this.setState(function () {
-                return {
-                  exCurrencyRate: exCurrencyRate
-                };
-              });
-
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }
-      });
-    });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "handlePayInvoice", function _callee2() {
-      var invoiceData, withdrawModalType, data, btcData, currency, ethData;
-      return _regenerator.default.async(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
             case 0:
               invoiceData = _this.props.invoiceData;
               withdrawModalType = null;
@@ -1292,26 +1266,26 @@ function (_React$PureComponent) {
 
             case 8:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
         }
       });
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "handleCancelInvoice", function _callee3() {
+    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "handleCancelInvoice", function _callee2() {
       var invoiceData;
-      return _regenerator.default.async(function _callee3$(_context4) {
+      return _regenerator.default.async(function _callee2$(_context3) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               invoiceData = _this.props.invoiceData;
 
               _actions.default.modals.open(_helpers.constants.modals.Confirm, {
                 onAccept: function onAccept() {
-                  return _regenerator.default.async(function onAccept$(_context3) {
+                  return _regenerator.default.async(function onAccept$(_context2) {
                     while (1) {
-                      switch (_context3.prev = _context3.next) {
+                      switch (_context2.prev = _context2.next) {
                         case 0:
-                          _context3.next = 2;
+                          _context2.next = 2;
                           return _regenerator.default.awrap(_actions.default.invoices.cancelInvoice(invoiceData.id));
 
                         case 2:
@@ -1321,7 +1295,7 @@ function (_React$PureComponent) {
 
                         case 3:
                         case "end":
-                          return _context3.stop();
+                          return _context2.stop();
                       }
                     }
                   });
@@ -1330,7 +1304,7 @@ function (_React$PureComponent) {
 
             case 2:
             case "end":
-              return _context4.stop();
+              return _context3.stop();
           }
         }
       });
@@ -1366,6 +1340,16 @@ function (_React$PureComponent) {
       _this.toggleComment(false);
     });
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "parseFloat", function (direction, value, directionType, type) {
+      switch (type) {
+        case 'btc (sms-protected)':
+          type = 'BTC PROTECTED';
+          break;
+
+        case 'btc (multisig)':
+          type = 'BTC MULTISIG';
+          break;
+      }
+
       return _react.default.createElement(_react.Fragment, null, direction === directionType ? _react.default.createElement("div", {
         styleName: "amount"
       }, "+ ".concat(parseFloat(Number(value).toFixed(5))), " ", type.toUpperCase()) : _react.default.createElement("div", {
@@ -1391,11 +1375,6 @@ function (_React$PureComponent) {
   }
 
   (0, _createClass2.default)(Row, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.getUsdBalance();
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -1408,6 +1387,7 @@ function (_React$PureComponent) {
           txType = _this$props2.txType,
           invoiceData = _this$props2.invoiceData,
           onSubmit = _this$props2.onSubmit;
+      console.log('sdfdsfdsfssd', type);
       var ind = this.state.ind;
       var _this$state = this.state,
           exCurrencyRate = _this$state.exCurrencyRate,
@@ -1479,9 +1459,7 @@ function (_React$PureComponent) {
         strokeWidth: "2"
       })))), _react.default.createElement("div", {
         styleName: "historyInfo"
-      }, _react.default.createElement("div", {
-        styleName: "directionHeading"
-      }, txType === 'INVOICE' ? _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactIntl.FormattedMessage, {
+      }, _react.default.createElement("div", null, txType === 'INVOICE' ? _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "RowHistoryInvoce",
         defaultMessage: "\u0418\u043D\u0432\u043E\u0439\u0441 #{number}",
         values: {
@@ -1568,7 +1546,7 @@ exports.default = _default;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"status":"B1fidjHPLhyGcoH8F5fGa","in":"_2WudR1frvBnj9kRO3FA9uG","arrowWrap":"_2ZtiIK3MNLzfrPdj9NR9bH","amount":"z9kssebSLkb8mADtAMWnq","out":"_3MGYaPvMhKsrx0_2-cz4vY","self":"_3MS0sH9FgE888Im5g8g2xg","cell":"_3iy6qiQe218Jih154eQVqE","confirm":"_38S3z2lx-rEz9afrkb9EwC","red":"_3EitOOo1lRyTU_A8XwnFZK","green":"_1RCXF-OwSr7B1HY7mxNdci","directionHeading":"_3KSEtr_YlbeqTSg-hXk1Ud","unconfirmed":"_2NV1PPhBfGGuyaPXmSlHdC","date":"_3qRLEPOS08JmoONhhzwZEV","address":"qb31A4v3_wPcuRk6u7OaR","amountUsd":"vYdnMoTrMzp21MwqWA9rf","historyInfo":"_8DegK4QSt4Uge7u8tvQVq","info":"YgKzn1hJy3aGY2rWbwSF1","noButtons":"_1CAEtY29lKIjqGgn1A9vfY","comment":"_2xEACUYkNDCkFn1razTQHj","btnWrapper":"_21DXC0zbdv8AGQ3A19RwM_","icon":"_3pEEj8MTTYSzn-t4UI3wER","historyRow":"dtzaHAhIbDqlX5-GVeT2g","input":"_1m9GCgCW0S2t8QjfalrCbA","submit":"_242JysLjCqRwNfH_8yfbw-","close":"_3WwpAw7B9lJw_hTslXlfDO","historyInvoiceInfo":"_12ebNK544EWCm0wA59ow84","circleIcon":"_2baEQItv0tI6OS12JdH4sE"};
+module.exports = {"status":"B1fidjHPLhyGcoH8F5fGa","in":"_2WudR1frvBnj9kRO3FA9uG","arrowWrap":"_2ZtiIK3MNLzfrPdj9NR9bH","amount":"z9kssebSLkb8mADtAMWnq","out":"_3MGYaPvMhKsrx0_2-cz4vY","self":"_3MS0sH9FgE888Im5g8g2xg","cell":"_3iy6qiQe218Jih154eQVqE","confirm":"_38S3z2lx-rEz9afrkb9EwC","unconfirmed":"_2NV1PPhBfGGuyaPXmSlHdC","red":"_3EitOOo1lRyTU_A8XwnFZK","green":"_1RCXF-OwSr7B1HY7mxNdci","date":"_3qRLEPOS08JmoONhhzwZEV","address":"qb31A4v3_wPcuRk6u7OaR","amountUsd":"vYdnMoTrMzp21MwqWA9rf","historyInfo":"_8DegK4QSt4Uge7u8tvQVq","info":"YgKzn1hJy3aGY2rWbwSF1","noButtons":"_1CAEtY29lKIjqGgn1A9vfY","comment":"_2xEACUYkNDCkFn1razTQHj","btnWrapper":"_21DXC0zbdv8AGQ3A19RwM_","icon":"_3pEEj8MTTYSzn-t4UI3wER","historyRow":"dtzaHAhIbDqlX5-GVeT2g","input":"_1m9GCgCW0S2t8QjfalrCbA","submit":"_242JysLjCqRwNfH_8yfbw-","close":"_3WwpAw7B9lJw_hTslXlfDO","historyInvoiceInfo":"_12ebNK544EWCm0wA59ow84","circleIcon":"_2baEQItv0tI6OS12JdH4sE"};
 
 /***/ }),
 
@@ -2029,7 +2007,6 @@ function BalanceForm(_ref) {
       handleWithdraw = _ref.handleWithdraw,
       handleExchange = _ref.handleExchange,
       currency = _ref.currency,
-      infoAboutCurrency = _ref.infoAboutCurrency,
       changePercent = _ref.changePercent;
 
   var _useState = (0, _react.useState)('usd'),
@@ -2038,6 +2015,17 @@ function BalanceForm(_ref) {
       setActiveCurrency = _useState2[1];
 
   var isWidgetBuild = _appConfig.default && _appConfig.default.isWidget;
+
+  switch (currency) {
+    case 'btc (sms-protected)':
+      currency = 'BTC SMS';
+      break;
+
+    case 'btc (multisig)':
+      currency = 'BTC MULTISIG';
+      break;
+  }
+
   return _react.default.createElement("div", {
     styleName: "yourBalance"
   }, _react.default.createElement("div", {
@@ -2051,7 +2039,7 @@ function BalanceForm(_ref) {
     styleName: "yourBalanceValue"
   }, activeCurrency === 'usd' ? _react.default.createElement("p", null, !isNaN(usdBalance) ? (0, _bignumber.BigNumber)(usdBalance).dp(2, _bignumber.BigNumber.ROUND_FLOOR).toString() : '') : _react.default.createElement("p", null, (0, _bignumber.BigNumber)(currencyBalance).dp(5, _bignumber.BigNumber.ROUND_FLOOR).toString(), changePercent ? _react.default.createElement("span", {
     styleName: changePercent > 0 ? 'green' : 'red'
-  }, "".concat(changePercent > 0 ? "+".concat(changePercent) : "-".concat(changePercent)), "%") : '')), _react.default.createElement("div", {
+  }, "".concat(changePercent > 0 ? "+".concat(changePercent) : "".concat(changePercent)), "%") : '')), _react.default.createElement("div", {
     styleName: "yourBalanceCurrencies"
   }, _react.default.createElement("button", {
     styleName: activeCurrency === 'usd' && 'active',
@@ -5052,6 +5040,50 @@ var getBalances = function getBalances() {
   }); // actions.nimiq.getBalance()
 };
 
+var getExchangeRate = function getExchangeRate(sellCurrency, buyCurrency) {
+  if (buyCurrency.toLowerCase() === 'usd') {
+    return new Promise(function (resolve, reject) {
+      var dataKey = sellCurrency.toLowerCase();
+
+      switch (sellCurrency.toLowerCase()) {
+        case 'btc (sms-protected)':
+        case 'btc (multisig)':
+          dataKey = 'btc';
+          break;
+
+        default:
+      }
+
+      var _getState = (0, _core.getState)(),
+          user = _getState.user;
+
+      if (user["".concat(dataKey, "Data")] && user["".concat(dataKey, "Data")].infoAboutCurrency) {
+        var currencyData = user["".concat(dataKey, "Data")];
+        resolve(currencyData.infoAboutCurrency.price_usd);
+      } else {
+        resolve(1);
+      }
+    });
+  }
+
+  return new Promise(function (resolve, reject) {
+    var url = "https://api.cryptonator.com/api/full/".concat(sellCurrency, "-").concat(buyCurrency);
+
+    _helpers.request.get(url, {
+      cacheResponse: 60000
+    }).then(function (_ref3) {
+      var exchangeRate = _ref3.ticker.price;
+      resolve(exchangeRate);
+    }).catch(function () {
+      if (_helpers.constants.customEcxchangeRate[sellCurrency.toLowerCase()] !== undefined) {
+        resolve(_helpers.constants.customEcxchangeRate[sellCurrency]);
+      } else {
+        resolve(1);
+      }
+    });
+  });
+};
+
 var getDemoMoney =  true ? function () {} : function () {
   // googe bitcoin (or rinkeby) faucet
   _helpers.request.get('https://swap.wpmix.net/demokeys.php', {}).then(function (r) {
@@ -5122,9 +5154,9 @@ var getInfoAboutCurrency = function getInfoAboutCurrency(currencyNames) {
 };
 
 var pullTransactions = function pullTransactions(transactions) {
-  var _ref3;
+  var _ref4;
 
-  var data = (_ref3 = []).concat.apply(_ref3, [[]].concat((0, _toConsumableArray2.default)(transactions))).sort(function (a, b) {
+  var data = (_ref4 = []).concat.apply(_ref4, [[]].concat((0, _toConsumableArray2.default)(transactions))).sort(function (a, b) {
     return b.date - a.date;
   });
 
@@ -5217,12 +5249,12 @@ var setTransactions = function setTransactions() {
 };
 
 var getText = function getText() {
-  var _getState = (0, _core.getState)(),
-      _getState$user = _getState.user,
-      ethData = _getState$user.ethData,
-      btcData = _getState$user.btcData,
-      bchData = _getState$user.bchData,
-      ltcData = _getState$user.ltcData;
+  var _getState2 = (0, _core.getState)(),
+      _getState2$user = _getState2.user,
+      ethData = _getState2$user.ethData,
+      btcData = _getState2$user.btcData,
+      bchData = _getState2$user.bchData,
+      ltcData = _getState2$user.ltcData;
 
   var text = "\n  You will need this instruction only in case of emergency (if you lost your keys) \r\n\n  please do NOT waste your time and go back to swap.online\r\n\n  \r\n\n  \r\n\n  \r\n\n  \r\n\n".concat(window.location.hostname, " emergency only instruction\n\r\n\n#ETHEREUM\n\r\n\nEthereum address: ").concat(ethData.address, "  \r\n\nPrivate key: ").concat(ethData.privateKey, "\r\n\n\r\n\nHow to access tokens and ethers: \r\n\n1. Go here https://www.myetherwallet.com/#send-transaction \r\n\n2. Select 'Private key'\r\n\n3. paste private key to input and click \"unlock\"\r\n\n\r\n\n# BITCOIN\r\n\n\r\n\nBitcoin address: ").concat(btcData.address, "\r\n\nPrivate key: ").concat(btcData.privateKey, "\r\n\n\r\n\n1. Go to blockchain.info\r\n\n2. login\r\n\n3. Go to settings > addresses > import\r\n\n4. paste private key and click \"Ok\"\r\n\n\r\n\n* We don`t store your private keys and will not be able to restore them!\n\r\n\n#LITECOIN\n\r\n\nLitecoin address: ").concat(ltcData.address, "  \r\n\nPrivate key: ").concat(ltcData.privateKey, "\r\n\n\r\n\n1. Go to blockchain.info\r\n\n2. login\r\n\n3. Go to settings > addresses > import\r\n\n4. paste private key and click \"Ok\"\r\n\n\r\n\n# BITCOINCASH\r\n\n\r\n\nBitcoin Cash address: ").concat(bchData.address, "\r\n\nPrivate key: ").concat(bchData.privateKey, "\r\n\n\r\n\n1. Go to blockchain.info\r\n\n2. login\r\n\n3. Go to settings > addresses > import\r\n\n4. paste private key and click \"Ok\"\r\n\n");
   /*
@@ -5263,6 +5295,7 @@ var _default = {
   setTransactions: setTransactions,
   downloadPrivateKeys: downloadPrivateKeys,
   getText: getText,
+  getExchangeRate: getExchangeRate,
   getReputation: getReputation,
   getInfoAboutCurrency: getInfoAboutCurrency
 };
@@ -21516,7 +21549,9 @@ function (_Component) {
         values: {
           buyCurrency: "".concat(buyCurrency)
         }
-      })), _react.default.createElement("p", null, _react.default.createElement(_reactIntl.FormattedMessage, {
+      })), _react.default.createElement("p", {
+        styleName: "subtitle"
+      }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "orders159",
         defaultMessage: "orders of those who {sell} {buyCurrency} to you",
         values: {
@@ -21549,7 +21584,9 @@ function (_Component) {
         values: {
           buyCurrency: "".concat(buyCurrency)
         }
-      })), _react.default.createElement("p", null, _react.default.createElement(_reactIntl.FormattedMessage, {
+      })), _react.default.createElement("p", {
+        styleName: "subtitle"
+      }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "orders186",
         defaultMessage: "orders of those who {buy} {buyCurrency} from you",
         values: {
@@ -21607,7 +21644,7 @@ exports.default = Orders;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"allOrders":"_3u9TAFfBmpY6DPEttcGM3I","titleButtonRow":"_1Exz4GT0XP0IQknCLQvPBp","buttonRow":"vRy_AsR8FNbh1S6r--05R","buttonRowWidget":"TdYSabqTQo-PJ_ot5CyCX","button":"_1_6G9u3f9qN1bs8HVP7LCI","ordersHeading":"j5MmmEEZwxYB81cARqmKP","tableBox":"_2epF89PUJwKqM4ghRMzJPx","price":"_38UMQWpzEaK3OBp4rSsVA2","have":"_3nZCfyfRJECl1x22ns6Fwi","haveValue":"_1bR0j0riL37UTu_NNRKmao","get":"_39P9dV_8L-t8ypWZf9OLzk","getValue":"_1HBRX9pfrI6PWGNmKCj1Da","btn":"_34a10gwQUsr8yrmt8LKuiS","img":"_2HrarDKer9Q4T5LMHi16mN","icon":"_2ZRasdVTWyd0GAhT9tHZc5","headerContainer":"W1ow0ByIUAgp7QhxxPWj_","closeButton":"_2j_iGIu8fLlei1pljTgBtO","buttonRowMobile":"jPsevi3VM5l5QrAb_9oUP"};
+module.exports = {"allOrders":"_3u9TAFfBmpY6DPEttcGM3I","titleButtonRow":"_1Exz4GT0XP0IQknCLQvPBp","buttonRow":"vRy_AsR8FNbh1S6r--05R","buttonRowWidget":"TdYSabqTQo-PJ_ot5CyCX","button":"_1_6G9u3f9qN1bs8HVP7LCI","ordersHeading":"j5MmmEEZwxYB81cARqmKP","tableBox":"_2epF89PUJwKqM4ghRMzJPx","price":"_38UMQWpzEaK3OBp4rSsVA2","have":"_3nZCfyfRJECl1x22ns6Fwi","haveValue":"_1bR0j0riL37UTu_NNRKmao","get":"_39P9dV_8L-t8ypWZf9OLzk","getValue":"_1HBRX9pfrI6PWGNmKCj1Da","btn":"_34a10gwQUsr8yrmt8LKuiS","img":"_2HrarDKer9Q4T5LMHi16mN","icon":"_2ZRasdVTWyd0GAhT9tHZc5","subtitle":"_3THKHVZEUN2ttVT89J1yHi","headerContainer":"W1ow0ByIUAgp7QhxxPWj_","closeButton":"_2j_iGIu8fLlei1pljTgBtO","buttonRowMobile":"jPsevi3VM5l5QrAb_9oUP"};
 
 /***/ }),
 
@@ -26109,6 +26146,8 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(10));
 
 var _react = _interopRequireDefault(__webpack_require__(4));
 
+var _propTypes = _interopRequireDefault(__webpack_require__(14));
+
 var _reactCssModules = _interopRequireDefault(__webpack_require__(9));
 
 var _momentWithLocalesEs = _interopRequireDefault(__webpack_require__(630));
@@ -26166,6 +26205,13 @@ var CommentRow = function CommentRow(props) {
       return toggleComment(true);
     }
   }, comment || "".concat((0, _momentWithLocalesEs.default)(date).format('LLLL'), "  ").concat(label));
+};
+
+CommentRow.defaultProps = {
+  label: ''
+};
+CommentRow.propTypes = {
+  label: _propTypes.default.string.isRequired
 };
 
 var _default = (0, _reactCssModules.default)(CommentRow, _Row.default, {
@@ -28043,10 +28089,13 @@ function (_Component) {
 
       if (currencyBalance) {
         currencyBalance.forEach(function (item) {
-          if ((!isWidgetBuild || widgetCurrencies.includes(item.name)) && item.infoAboutCurrency) {
+          if ((!isWidgetBuild || widgetCurrencies.includes(item.name)) && item.infoAboutCurrency && item.balance !== 0) {
+            if (item.name === 'BTC') {
+              changePercent = item.infoAboutCurrency.percent_change_1h;
+            }
+
             btcBalance += item.balance * item.infoAboutCurrency.price_btc;
-            usdBalance = btcBalance * item.infoAboutCurrency.price_usd;
-            changePercent = item.infoAboutCurrency.percent_change_1h;
+            usdBalance += item.balance * item.infoAboutCurrency.price_usd;
           }
         });
       }
@@ -28892,7 +28941,7 @@ function (_Component) {
         defaultMessage: "Not joined"
       })) : _react.default.createElement("div", {
         styleName: "loader"
-      }, _react.default.createElement(_InlineLoader.default, null)) : _react.default.createElement("div", {
+      }, !(balanceError && nodeDownErrorShow) && _react.default.createElement(_InlineLoader.default, null)) : _react.default.createElement("div", {
         styleName: "no-select-inline",
         onClick: this.handleReloadBalance
       }, _react.default.createElement("i", {
@@ -29134,7 +29183,7 @@ var _default = function _default(_ref) {
     type: currency,
     contractAddress: contractAddress,
     address: address
-  }, _react.default.createElement("span", null, "\xB7 \xB7 \xB7", endOfAddress)));
+  }, _react.default.createElement("p", null, "\xB7 \xB7 \xB7", endOfAddress)));
   /* eslint-enable */
 };
 
