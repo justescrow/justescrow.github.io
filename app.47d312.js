@@ -53004,7 +53004,7 @@ var Footer = function Footer(props) {
     styleName: "footer"
   }, _react.default.createElement(_WidthContainer.default, {
     styleName: "container"
-  }, _react.default.createElement(_SwitchLang.default, null), _react.default.createElement(_SocialMenu.default, null), !_reactDeviceDetect.isMobile && _react.default.createElement(_Info.default, props), _react.default.createElement("span", {
+  }, _react.default.createElement(_SwitchLang.default, props), _react.default.createElement(_SocialMenu.default, null), !_reactDeviceDetect.isMobile && _react.default.createElement(_Info.default, props), _react.default.createElement("span", {
     styleName: "date"
   }, _appConfig.default.time))));
 };
@@ -53370,9 +53370,13 @@ var _createClass2 = _interopRequireDefault(__webpack_require__(3));
 
 var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(6));
 
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(5));
+var _getPrototypeOf3 = _interopRequireDefault(__webpack_require__(5));
+
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(13));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(7));
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(10));
 
 var _react = _interopRequireWildcard(__webpack_require__(4));
 
@@ -53386,40 +53390,65 @@ var _utils = __webpack_require__(960);
 
 var _reactIntl = __webpack_require__(11);
 
-var _dec, _class;
+var _dec, _class, _temp;
 
-var SwitchLang = (_dec = (0, _reactCssModules.default)(_SwitchLang.default), (0, _reactIntl.injectIntl)(_class = _dec(_class =
+var SwitchLang = (_dec = (0, _reactCssModules.default)(_SwitchLang.default), (0, _reactIntl.injectIntl)(_class = _dec(_class = (_temp =
 /*#__PURE__*/
 function (_Component) {
   (0, _inherits2.default)(SwitchLang, _Component);
 
   function SwitchLang() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     (0, _classCallCheck2.default)(this, SwitchLang);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SwitchLang).apply(this, arguments));
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(SwitchLang)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "switchLang", function (event, locale) {
+      event.preventDefault();
+      var history = _this.props.history;
+      (0, _utils.setCookie)('mylang', locale.toUpperCase(), new Date(new Date().getFullYear() + 1, 1));
+      history.push("".concat((0, _locale.relocalisedUrl)(locale)));
+      window.setTimeout(function () {
+        window.location.reload();
+      }, 10);
+    });
+    return _this;
   }
 
   (0, _createClass2.default)(SwitchLang, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           locale = _this$props.intl.locale,
           className = _this$props.className;
       return _react.default.createElement("div", {
         styleName: "langSwitcher"
       }, _react.default.createElement("a", {
-        href: locale.toUpperCase() === 'RU' ? (0, _locale.relocalisedUrl)(locale) : undefined,
+        href: locale.toUpperCase() === 'RU' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
-        onClick: function onClick() {
-          return (0, _utils.setCookie)('mylang', 'EN', new Date(new Date().getFullYear() + 1, 1));
+        onClick: function onClick(e) {
+          _this2.switchLang(e, locale);
+
+          return false;
         }
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "SwitchLang20",
         defaultMessage: "EN "
       })), "|", _react.default.createElement("a", {
-        href: locale.toUpperCase() === 'EN' ? (0, _locale.relocalisedUrl)(locale) : undefined,
+        href: locale.toUpperCase() === 'EN' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
-        onClick: function onClick() {
-          return (0, _utils.setCookie)('mylang', 'RU', new Date(new Date().getFullYear() + 1, 1));
+        onClick: function onClick(e) {
+          _this2.switchLang(e, locale);
+
+          return false;
         }
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "SwitchLang24",
@@ -53428,7 +53457,7 @@ function (_Component) {
     }
   }]);
   return SwitchLang;
-}(_react.Component)) || _class) || _class);
+}(_react.Component), _temp)) || _class) || _class);
 exports.default = SwitchLang;
 
 /***/ }),
@@ -63701,7 +63730,24 @@ function (_Component) {
       return _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouter.Route, {
         path: _locale.localisePrefix,
         render: function render(props) {
-          var currentLocale = props.match.params.locale || (0, _locale.defaultLocale)();
+          var currentLocale = (0, _locale.defaultLocale)();
+
+          if (props.match.params.locale !== undefined) {
+            currentLocale = props.match.params.locale;
+          } else {
+            var hashParams = props.location.hash.split('/');
+
+            if (hashParams.length > 1) {
+              if (hashParams[0] === '#') {
+                var localeInHash = hashParams[1].toLowerCase();
+
+                if (localeInHash === 'en' || localeInHash === 'ru') {
+                  currentLocale = localeInHash;
+                }
+              }
+            }
+          }
+
           var messages = translations[currentLocale];
           return _react.default.createElement(_reactIntl.IntlProvider, (0, _extends2.default)({}, props, {
             key: currentLocale,
@@ -65395,8 +65441,9 @@ var reduceMessages = function reduceMessages(result) {
 exports.reduceMessages = reduceMessages;
 
 var defaultLocale = function defaultLocale() {
-  return navigator.language.split('-')[0];
-};
+  return 'en';
+}; //navigator.language.split('-')[0]
+
 
 exports.defaultLocale = defaultLocale;
 var localisePrefix = '/:locale(en|ru)?';
