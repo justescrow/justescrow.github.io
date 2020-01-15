@@ -65441,9 +65441,8 @@ var reduceMessages = function reduceMessages(result) {
 exports.reduceMessages = reduceMessages;
 
 var defaultLocale = function defaultLocale() {
-  return 'en';
-}; //navigator.language.split('-')[0]
-
+  return navigator.language.split('-')[0];
+};
 
 exports.defaultLocale = defaultLocale;
 var localisePrefix = '/:locale(en|ru)?';
