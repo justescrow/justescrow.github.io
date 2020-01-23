@@ -5175,14 +5175,13 @@ var getInfoAboutCurrency = function getInfoAboutCurrency(currencyNames) {
           }
         }
       });
-
-      _reducers.default.user.setIsFetching({
-        isFetching: false
-      });
-
       resolve(true);
     }).catch(function (error) {
       reject(error);
+    }).finally(function () {
+      return _reducers.default.user.setIsFetching({
+        isFetching: false
+      });
     });
   });
 };
