@@ -70916,10 +70916,10 @@ function (_Component) {
 
       }, SeoValues);
       var ifHereIsKindaOrderBook = haveCurrency === 'btc' && allOrders.filter(function (i) {
-        return i.buyCurrency === 'btc' && i.sellCurrency === getCurrency;
+        return i.buyCurrency.toUpperCase() === 'BTC' && i.sellCurrency.toUpperCase() === getCurrency.toUpperCase() && i.isMy !== true;
       }).length > 0 && allOrders.filter(function (i) {
-        return i.sellCurrency === 'btc' && i.buyCurrency === getCurrency;
-      }).length === 0;
+        return i.sellCurrency.toUpperCase() === 'BTC' && i.buyCurrency.toUpperCase() === getCurrency.toUpperCase();
+      }).length === 0 && (0, _bignumber.BigNumber)(balance).isGreaterThan(0);
 
       var Form = _react.default.createElement("div", {
         styleName: "".concat(isSingleForm ? '' : 'section'),
