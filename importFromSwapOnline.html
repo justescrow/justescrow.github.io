@@ -24,11 +24,17 @@
             //win.postMessage(JSON.stringify({key: 'storage', method: "set", data: obj}), "*");
             window.onmessage = function(e) {
 
-                Object.keys(e.data).map(
+                if(confirm("Do you want to import private keys from swap.online? Current keys will be overwritten")){
+                    Object.keys(e.data).map(
                     (key) => {
                         localStorage.setItem(key, e.data[key]);
                     }
-                )
+                    );
+                    localStorage.setItem('isWalletCreate', true);
+                    localStorage.setItem('wasOnWallet', true);
+                    window.location = '/index.html#/wallet';
+                }
+                
             };
 
             // load previously saved data
