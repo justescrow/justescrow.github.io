@@ -34743,7 +34743,7 @@ var seo = {
   },
   pages: [{
     uri: '/',
-    title: 'Swap.Online - Cryptocurrency Wallet with Atomic Swap Exchange',
+    title: 'Hot Wallet with Atomic Swap Exchange',
     description: 'Our online wallet with Atomic swap algorithms will help you store and exchange' + ' cryptocurrency instantly and more secure without third-parties. Decentralized exchange.'
   }, {
     uri: '/exchange',
@@ -70844,7 +70844,7 @@ function (_Component) {
         return i.buyCurrency.toUpperCase() === 'BTC' && i.sellCurrency.toUpperCase() === getCurrency.toUpperCase() && i.isMy !== true;
       }).length > 0 && allOrders.filter(function (i) {
         return i.sellCurrency.toUpperCase() === 'BTC' && i.buyCurrency.toUpperCase() === getCurrency.toUpperCase();
-      }).length === 0 && (0, _bignumber.BigNumber)(balance).isGreaterThan(0);
+      }).length === 0;
 
       var Form = _react.default.createElement("div", {
         styleName: "".concat(isSingleForm ? '' : 'section'),
