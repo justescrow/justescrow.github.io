@@ -12,6 +12,7 @@
 
             var iframe = document.getElementsByTagName('iframe')[0];
             var win;
+            
             // some browser (don't remember which one) throw exception when you try to access
             // contentWindow for the first time, it work when you do that second time
             try {
@@ -20,18 +21,37 @@
                 win = iframe.contentWindow;
             }
 
+            function check(data) {
+                var status = true;
+                Object.keys(data).map(
+                    (key) => {
+                        if(localStorage.getItem(key) === null || localStorage.getItem(key) != data[key]) {
+                            status = false;
+                        }
+                    }
+                );
+
+                return status;
+            }
+
             // save obj in subdomain localStorage
             //win.postMessage(JSON.stringify({key: 'storage', method: "set", data: obj}), "*");
             window.onmessage = function(e) {
 
                 if(confirm("Do you want to import private keys from swap.online? Current keys will be overwritten")){
                     Object.keys(e.data).map(
-                    (key) => {
-                        localStorage.setItem(key, e.data[key]);
-                    }
+                        (key) => {
+                            localStorage.setItem(key, e.data[key]);
+                        }
                     );
+
                     localStorage.setItem('isWalletCreate', true);
                     localStorage.setItem('wasOnWallet', true);
+
+                    if(check(e.data)) {
+                        win.postMessage(JSON.stringify({key: 'storage', method: "clear"}), "*");
+                    }
+                    
                     window.location = '/index.html#/wallet';
                 }
                 
