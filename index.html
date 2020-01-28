@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <title>Hot Wallet with p2p exchange</title>
+  <title>JustEscrow: Hot Wallet with p2p exchange</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image"
@@ -16,42 +16,36 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
-  <meta property="og:url" content="https://swap.online">
+  <meta property="og:url" content="https://justescrow.io">
 
-  <!-- Google Analytics -->
-  <script>
-    const isMainDomain = window.location.hostname === 'swap.online';
-    const isExtension = window.location.hostname === 'jbhhiineefefhcaoocmnkbmgfjbhninc';
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120201580-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    if (isMainDomain || isExtension) {
-      const gtagScript = document.createElement('script');
-      var gtagId;
-
-      if (isMainDomain) {
-        gtagId = 'GTM-WK72GSV';
-      }
-
-      if (isExtension) {
-        gtagId = 'GTM-PJH52QL';
-      }
-
-      gtagScript.async = true;
-      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gtagId;
-
-      document.head.appendChild(gtagScript);
-
-      window.dataLayer = window.dataLayer || [];
-
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
-      gtag('config', gtagId);
-    }
-
-  </script>
+  gtag('config', 'UA-120201580-1');
+</script>
   <!-- /Google Analytics -->
+  
+  <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '687131161710949');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=687131161710949&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 
   <style>
     .overlay {
@@ -110,7 +104,7 @@
 
   <link rel="stylesheet" href="https://swap.online/dist/css/swap.css?v=1.93">
 
-<link rel="shortcut icon" href="https://swaponline.github.io/assets/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="https://swaponline.github.io/assets/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="https://swaponline.github.io/assets/favicon-32x32.png"><link rel="manifest" href="https://swaponline.github.io/assets/manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="swap.online"><link rel="apple-touch-icon" sizes="57x57" href="https://swaponline.github.io/assets/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="https://swaponline.github.io/assets/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="https://swaponline.github.io/assets/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="https://swaponline.github.io/assets/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="https://swaponline.github.io/assets/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="https://swaponline.github.io/assets/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="https://swaponline.github.io/assets/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="https://swaponline.github.io/assets/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="https://swaponline.github.io/assets/apple-touch-icon-167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="https://swaponline.github.io/assets/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="1024x1024" href="https://swaponline.github.io/assets/apple-touch-icon-1024x1024.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="swap.online"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="https://swaponline.github.io/assets/apple-touch-startup-image-320x460.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="https://swaponline.github.io/assets/apple-touch-startup-image-640x920.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="https://swaponline.github.io/assets/apple-touch-startup-image-640x1096.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="https://swaponline.github.io/assets/apple-touch-startup-image-750x1294.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="https://swaponline.github.io/assets/apple-touch-startup-image-1182x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="https://swaponline.github.io/assets/apple-touch-startup-image-1242x2148.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="https://swaponline.github.io/assets/apple-touch-startup-image-748x1024.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="https://swaponline.github.io/assets/apple-touch-startup-image-768x1004.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="https://swaponline.github.io/assets/apple-touch-startup-image-1496x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="https://swaponline.github.io/assets/apple-touch-startup-image-1536x2008.png"><link rel="icon" type="image/png" sizes="228x228" href="https://swaponline.github.io/assets/coast-228x228.png"><meta name="msapplication-TileColor" content="#fff"><meta name="msapplication-TileImage" content="https://swaponline.github.io/assets/mstile-144x144.png"><meta name="msapplication-config" content="https://swaponline.github.io/assets/browserconfig.xml"><link rel="yandex-tableau-widget" href="https://swaponline.github.io/assets/yandex-browser-manifest.json"><link href="https://swaponline.github.io/app.d8e750.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="https://justescrow.github.io/assets/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="https://justescrow.github.io/assets/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="https://justescrow.github.io/assets/favicon-32x32.png"><link rel="manifest" href="https://justescrow.github.io/assets/manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="swap.online"><link rel="apple-touch-icon" sizes="57x57" href="https://justescrow.github.io/assets/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="https://justescrow.github.io/assets/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="https://justescrow.github.io/assets/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="https://justescrow.github.io/assets/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="https://justescrow.github.io/assets/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="https://justescrow.github.io/assets/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="https://justescrow.github.io/assets/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="https://justescrow.github.io/assets/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="https://justescrow.github.io/assets/apple-touch-icon-167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="https://justescrow.github.io/assets/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="1024x1024" href="https://justescrow.github.io/assets/apple-touch-icon-1024x1024.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="justescrow.io"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="https://justescrow.github.io/assets/apple-touch-startup-image-320x460.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="https://justescrow.github.io/assets/apple-touch-startup-image-640x920.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="https://justescrow.github.io/assets/apple-touch-startup-image-640x1096.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="https://justescrow.github.io/assets/apple-touch-startup-image-750x1294.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="https://justescrow.github.io/assets/apple-touch-startup-image-1182x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="https://justescrow.github.io/assets/apple-touch-startup-image-1242x2148.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="https://justescrow.github.io/assets/apple-touch-startup-image-748x1024.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="https://justescrow.github.io/assets/apple-touch-startup-image-768x1004.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="https://justescrow.github.io/assets/apple-touch-startup-image-1496x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="https://justescrow.github.io/assets/apple-touch-startup-image-1536x2008.png"><link rel="icon" type="image/png" sizes="228x228" href="https://justescrow.github.io/assets/coast-228x228.png"><meta name="msapplication-TileColor" content="#fff"><meta name="msapplication-TileImage" content="https://justescrow.github.io/assets/mstile-144x144.png"><meta name="msapplication-config" content="https://justescrow.github.io/assets/browserconfig.xml"><link rel="yandex-tableau-widget" href="https://justescrow.github.io/assets/yandex-browser-manifest.json"><link href="https://justescrow.github.io/app.d8e750.css" rel="stylesheet"></head>
 
 <body>
 
