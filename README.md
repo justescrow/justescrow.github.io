@@ -1,15 +1,12 @@
-# swaponline.github.io
+# justescrow.github.io
 
-How to build own crypto wallet on my own site?
+CrossChain Dex Crypto Wallet
 
-1. click "Clone or download" on https://github.com/swaponline/swaponline.github.io/
-2. unzip to your site using FTP
+1. create "new wallet" on https://jusrescrow.io
+2. download your private keys
 
-How to add ERC20 ?
-1. https://github.com/swaponline/swap.react/
+How to trade ?
+1. Deposit funds into your wallets
+2. Create new Buy/Sell orders
 
-
-# FAQ
-
-Q: I have installed the wallet testing . Now I was able to creat a wallet and got a private key without importing my own private key . That is my question , which node is that wallet connected to ? Yours ?
-A: Bitpay for Bitocin, Infura for Ethereum
+Everyone is happy when they Just Escrow.
