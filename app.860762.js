@@ -4080,8 +4080,8 @@ var seo = {
     twitter: 'https://twitter.com/justescrow_io',
     facebook: 'https://www.facebook.com/SwapOnlineTeam',
     telegram: 'https://t.me/justescrow',
-    email: 'info@swaponline.io',
-    mainUrl: 'https://swaponline.io',
+    email: 'info@justescrow.io',
+    mainUrl: 'https://justescrow.io',
     logo: 'https://screenshots.wpmix.net/chrome_2019-03-28_18-55-506746c4c5-44e6-4bb5-89cb-52ce8fabcedf.png'
   },
   pages: [{
@@ -4198,7 +4198,7 @@ var seo = {
     title: 'Bitcoin (BTC) Web Wallet with Atomic Swap.',
     description: 'Justescrow.io Bitcoin Wallet will allow you to exchange your coins using Atomic Swap technology.',
     h1: 'Your online Bitcoin (BTC) web wallet with Atomic Swap.',
-    footer: "Use Justescrow.io as your safe and high-performance Bitcoin wallet. Firstly, you need to open https://swaponline.io/  in your browser.\n        Secondly, please, download your private and public key-pair for the Bitcoin network and save it somewhere in the reliable place.\n        In case of your failure to access your Bitcoin account, no one will be able to help you to restore your funds.\n        With the key downloaded and saved, you can start to store, send, receive and exchange Bitcoin.\n        Nowadays, the trades with USDT, ETH, BCH, GUSD and multiple amazing ERC-20 tokens are available.\n        Taking the fact into account, you can build your own investment strategy, starting with the Bitcoin  - the most popular blockchain in the world.\n        Mass-adopted in early 2010s it became a first expression of decentralized \u2018electronic cash\u2019 system based on Smart Contracts.\n        Justescrow.io compares favourably with the rest of Bitcoin wallets since it uses the Atomic Swaps technology allowing\n        the direct interaction between blockchains with nok third party involved. Thus, Justescrow.io is not pegged to single blockchain,\n        it allows to store, send, receive and exchange Bitcoin, Ethereum, USDT, BCH and the number of ERC-20 tokens."
+    footer: "Use Justescrow.io as your safe and high-performance Bitcoin wallet. Firstly, you need to open https://justescrow.io/  in your browser.\n        Secondly, please, download your private and public key-pair for the Bitcoin network and save it somewhere in the reliable place.\n        In case of your failure to access your Bitcoin account, no one will be able to help you to restore your funds.\n        With the key downloaded and saved, you can start to store, send, receive and exchange Bitcoin.\n        Nowadays, the trades with USDT, ETH, BCH, GUSD and multiple amazing ERC-20 tokens are available.\n        Taking the fact into account, you can build your own investment strategy, starting with the Bitcoin  - the most popular blockchain in the world.\n        Mass-adopted in early 2010s it became a first expression of decentralized \u2018electronic cash\u2019 system based on Smart Contracts.\n        Justescrow.io compares favourably with the rest of Bitcoin wallets since it uses the Atomic Swaps technology allowing\n        the direct interaction between blockchains with nok third party involved. Thus, Justescrow.io is not pegged to single blockchain,\n        it allows to store, send, receive and exchange Bitcoin, Ethereum, USDT, BCH and the number of ERC-20 tokens."
   }, {
     uri: '/BitcoinCash-wallet',
     title: 'Justescrow.io - Bitcoin Cash (BCH) Wallet with Atomic Swap exchange.',
@@ -37510,7 +37510,7 @@ var _reactIntl = __webpack_require__(11);
 var _reactCopyToClipboard = _interopRequireDefault(__webpack_require__(87));
 
 var Referral = function Referral(props) {
-  var myRefLink = "https://swaponline.io/?promo=".concat(props.address);
+  var myRefLink = "https://justescrow.io/?promo=".concat(props.address);
   return _react.default.createElement("div", null, _react.default.createElement("span", {
     styleName: "myLink"
   }, "".concat(myRefLink)), "\xA0\xA0", _react.default.createElement(_reactCopyToClipboard.default, {
@@ -44438,7 +44438,7 @@ function (_React$Component) {
       })), _react.default.createElement("div", {
         styleName: "href"
       }, _react.default.createElement("a", {
-        href: "https://swaponline.io/exchange/usdt-to-btc",
+        href: "https://justescrow.io/exchange/usdt-to-btc",
         target: "_blank",
         rel: "noopener noreferrer"
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
@@ -47987,7 +47987,7 @@ function (_ServiceInterface) {
       }
 
       this.peer = peer;
-      var defaultRoomName = this.app.isMainNet() ? 'swap.online' : 'testnet.swap.online';
+      var defaultRoomName = this.app.isMainNet() ? 'justescrow.io' : 'testnet.swap.online';
       this.roomName = this._config.roomName || defaultRoomName;
       (0, _debug.default)('swap.core:room')("Using room: ".concat(this.roomName));
       this.connection = this.app.env.IpfsRoom(ipfsConnection, this.roomName, {
