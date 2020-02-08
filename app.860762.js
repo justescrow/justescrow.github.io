@@ -38628,14 +38628,14 @@ var defaultStartPack = [{
   name: "ETH",
   capture: "Ethereum"
 }, {
-  name: "litecoin",
-  capture: "LTC"
+  name: "BCH",
+  capture: "Bitcoin cash"
+}, {
+  name: "LTC",
+  capture: "litecoin"
 }, {
   name: "USDT",
   capture: "Tether"
-}, {
-  name: "EURS",
-  capture: "Eurs"
 }];
 var CreateWallet = (_dec = (0, _redaction.connect)(function (_ref) {
   var currencies = _ref.currencies.items;
