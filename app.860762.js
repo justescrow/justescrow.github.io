@@ -38531,13 +38531,6 @@ var CreateWallet = function CreateWallet(props) {
   }, _react.default.createElement(_reactIntl.FormattedMessage, {
     id: "ImportKeysBtn",
     defaultMessage: "\u0418\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
-  })), _react.default.createElement("br", null), _react.default.createElement("a", {
-    href: "/importFromSwapOnline.html",
-    styleName: "link-import",
-    className: "text-danger"
-  }, _react.default.createElement(_reactIntl.FormattedMessage, {
-    id: "ImportFromSwapOnlineBtn",
-    defaultMessage: "Import from swap.online"
   })), _react.default.createElement("button", {
     onClick: goToExchange
   }, _react.default.createElement(_reactIntl.FormattedMessage, {
