@@ -43790,7 +43790,7 @@ var VideoAndFeatures = function VideoAndFeatures(props) {
     height: "300",
     src: props.intl.formatMessage({
       id: 'VidLinkFrame',
-      defaultMessage: 'https://www.youtube.com/embed/Jhrb7xOT_7s'
+      defaultMessage: 'https://www.youtube.com/embed/WCMaa1edT10'
     }),
     frameBorder: "0",
     allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
