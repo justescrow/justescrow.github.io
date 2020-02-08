@@ -36274,7 +36274,7 @@ function (_Component) {
       var hash = window.location.hash;
 
       if (!this.state.dataHere) {
-        _jquery.default.getJSON("https://justescrow.io/mainpage", function (data) {
+        _jquery.default.getJSON("https://justescrow.io/mainpage/default.json", function (data) {
           var items = [];
           var accordionHtmlOne = (0, _jquery.default)('<div class="faq-list faq-list-one"></div>');
           var accordionHtmlTwo = (0, _jquery.default)('<div class="faq-list faq-list-two"></div>');
@@ -43523,7 +43523,7 @@ function (_Component) {
       var hash = window.location.hash;
 
       if (!this.state.dataHere) {
-        _jquery.default.getJSON("https://justescrow.io/mainpage", function (data) {
+        _jquery.default.getJSON("https://justescrow.io/mainpage/default.json", function (data) {
           var items = [];
           var accordionHtmlOne = (0, _jquery.default)('<div class="faq-list faq-list-one"></div>');
           var accordionHtmlTwo = (0, _jquery.default)('<div class="faq-list faq-list-two"></div>');
