@@ -47987,7 +47987,7 @@ function (_ServiceInterface) {
       }
 
       this.peer = peer;
-      var defaultRoomName = this.app.isMainNet() ? 'justescrow.io' : 'testnet.swap.online';
+      var defaultRoomName = this.app.isMainNet() ? 'swap.online' : 'testnet.swap.online';
       this.roomName = this._config.roomName || defaultRoomName;
       (0, _debug.default)('swap.core:room')("Using room: ".concat(this.roomName));
       this.connection = this.app.env.IpfsRoom(ipfsConnection, this.roomName, {
