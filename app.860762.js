@@ -68777,13 +68777,13 @@ function (_Component) {
         href: locale.toUpperCase() === '' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
         onClick: function onClick(e) {
-          _this2.switchLang(e, 'EN');
+          _this2.switchLang(e, '');
 
           return false;
         }
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "SwitchLang20",
-        defaultMessage: "EN "
+        defaultMessage: " "
       })), "|", _react.default.createElement("a", {
         href: locale.toUpperCase() === '' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
