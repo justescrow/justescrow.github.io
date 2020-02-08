@@ -4341,7 +4341,7 @@ exports.default = CurrencyButton;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"wrapper":"_2TJBXmkSZhOIjov3I3lBlh","isExist":"_29uAb72v1auRMWj3NJgmvn","mobileFormBody":"_2oTm88hayKpqTtocqScQOs","formBody":"_3npTQOgmSQFO6hOEfGjSUR","currencyChooserWrapper":"_3aGWzW8XirfXzKL7mXScI3","inLine":"Lj7zTQWsZ4pdUMN3CMRY","link-import":"_3nnK9zdZ_d0tyQJsHaLSK8","notMain":"hfzh60NIE9J5qLe4PRY_m","secureChooserWrapper":"_28CsWxsFpkmHL-6NthF4gB","stepNumber":"_3mMimRQrJGmpCYZAnFmw6Q","logo":"_1iBACkm6aO7GZIhmols9ls","btc":"_2t_MxNv4ZkzuRsIAf7LjlE","eth":"_2wOk2R3JRBe-TboxWgqU60","coinColor":"WRDc4Q1-sXn_HiWxPbU8d","usdt":"_3Ut7kijlwnQBTZxLemXcze","eurs":"_3f5Q-40qTvYxdDfITwVTpG","swap":"_2hQLpnJBWkdb-mYKjf8VET","purple":"_3DG5GAcinRh1NXSc0FsggH","bch":"_3kxzJjC99EMXb47sqzDd2w","green":"_1jhOBGcLbp5X2sZmb6fOIQ","assetsTableIcon":"_2ciLF3bYxB5WP-7VQUvP-y","continue":"_252sAKLU7PsZsecmk6t1EW","subHeader":"_2tOUoR7G_lmxPcrCrbh8Bu","smallArr":"_3QTayL7NhRlbX2O0wIO5_5","buttonWrapper":"_3b0EhhiypHQSJpqCnA4bGP","card":"_3Tm10Yy_BvGMHAEXWq3J66","cupture1":"_3NEofP2M-D46_1Hzco98Sf","etc":"_11a-l2cbz03fJlcZ7RxXOG","decorated":"_3BM4mNJg0L3rA0M5NHkprS","cardDisabled":"AFqdt_x0jry5s3OPx9ZIq","purpleBorder":"_35XQEIObWSmMm5n8UQPzpu","cardActivated":"_2KP2nsDhh8YFVDYv78yEVs","secondStepInput":"_3b7bzEogzOYoFhV16323k9","secureSize":"_1UZ-jQpRb3QCByg80lBlp1","currencyChooserWrapperSecond":"_19lypdDLjcd__v8tzlgMuz","flex":"_1WxPrbT-htcfGX6ha3ZeBh","ind":"_2LdPBdUZU3w4E_o963jPKr","second":"_1W9lRG8xlAXTda1xb2MDd_","capture":"IKPdJ79N_RbMgo6lxLk6C","steps":"_107WV0V5SkeQXM3vrpjBPc","listGroup":"_1pNezQXlzYouwJIgM4fvkq","thirdCard":"_1zoslC6j1gD08xz_893v2K","thirdPageIcons":"_3wnij1RE1E3ifSjQRYUNU0","error":"_2dU6QIr3AKxq1XhxS7usq"};
+module.exports = {"wrapper":"_2TJBXmkSZhOIjov3I3lBlh","isExist":"_29uAb72v1auRMWj3NJgmvn","mobileFormBody":"_2oTm88hayKpqTtocqScQOs","formBody":"_3npTQOgmSQFO6hOEfGjSUR","currencyChooserWrapper":"_3aGWzW8XirfXzKL7mXScI3","inLine":"Lj7zTQWsZ4pdUMN3CMRY","link-import":"_3nnK9zdZ_d0tyQJsHaLSK8","notMain":"hfzh60NIE9J5qLe4PRY_m","secureChooserWrapper":"_28CsWxsFpkmHL-6NthF4gB","stepNumber":"_3mMimRQrJGmpCYZAnFmw6Q","logo":"_1iBACkm6aO7GZIhmols9ls","btc":"_2t_MxNv4ZkzuRsIAf7LjlE","eth":"_2wOk2R3JRBe-TboxWgqU60","coinColor":"WRDc4Q1-sXn_HiWxPbU8d","usdt":"_3Ut7kijlwnQBTZxLemXcze","eurs":"_3f5Q-40qTvYxdDfITwVTpG","scro":"_2hQLpnJBWkdb-mYKjf8VET","purple":"_3DG5GAcinRh1NXSc0FsggH","bch":"_3kxzJjC99EMXb47sqzDd2w","green":"_1jhOBGcLbp5X2sZmb6fOIQ","assetsTableIcon":"_2ciLF3bYxB5WP-7VQUvP-y","continue":"_252sAKLU7PsZsecmk6t1EW","subHeader":"_2tOUoR7G_lmxPcrCrbh8Bu","smallArr":"_3QTayL7NhRlbX2O0wIO5_5","buttonWrapper":"_3b0EhhiypHQSJpqCnA4bGP","card":"_3Tm10Yy_BvGMHAEXWq3J66","cupture1":"_3NEofP2M-D46_1Hzco98Sf","etc":"_11a-l2cbz03fJlcZ7RxXOG","decorated":"_3BM4mNJg0L3rA0M5NHkprS","cardDisabled":"AFqdt_x0jry5s3OPx9ZIq","purpleBorder":"_35XQEIObWSmMm5n8UQPzpu","cardActivated":"_2KP2nsDhh8YFVDYv78yEVs","secondStepInput":"_3b7bzEogzOYoFhV16323k9","secureSize":"_1UZ-jQpRb3QCByg80lBlp1","currencyChooserWrapperSecond":"_19lypdDLjcd__v8tzlgMuz","flex":"_1WxPrbT-htcfGX6ha3ZeBh","ind":"_2LdPBdUZU3w4E_o963jPKr","second":"_1W9lRG8xlAXTda1xb2MDd_","capture":"IKPdJ79N_RbMgo6lxLk6C","steps":"_107WV0V5SkeQXM3vrpjBPc","listGroup":"_1pNezQXlzYouwJIgM4fvkq","thirdCard":"_1zoslC6j1gD08xz_893v2K","thirdPageIcons":"_3wnij1RE1E3ifSjQRYUNU0","error":"_2dU6QIr3AKxq1XhxS7usq"};
 
 /***/ }),
 /* 341 */,
@@ -32116,7 +32116,7 @@ var _bch = _interopRequireDefault(__webpack_require__(587));
 
 var _nim = _interopRequireDefault(__webpack_require__(2138));
 
-var _swap = _interopRequireDefault(__webpack_require__(588));
+var _scro = _interopRequireDefault(__webpack_require__(588));
 
 var _usdt = _interopRequireDefault(__webpack_require__(589));
 
@@ -32159,7 +32159,7 @@ var _default = {
   syc2: _syc.default,
   icx: _icx.default,
   usdt: _usdt.default,
-  swap: _swap.default,
+  scro: _swap.default,
   waves: _waves.default,
   xrp: _xrp.default,
   yup: _yup.default,
@@ -38744,7 +38744,7 @@ function (_Component) {
           curState = _this$state2.curState,
           startPack = _this$state2.startPack,
           all = _this$state2.all;
-      var coloredIcons = ['btc', 'eth', 'swap', 'bch', 'usdt', 'eurs'];
+      var coloredIcons = ['btc', 'eth', 'scro', 'bch', 'usdt', 'eurs'];
       return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement(_Explanation.default, {
         step: 1,
         subHeaderText: (0, _texts.subHeaderText1)()
