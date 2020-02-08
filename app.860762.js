@@ -1805,7 +1805,7 @@ var linksManager = {
   medium: '#',
   twitter: 'https://twitter.com/justescrow_io',
   facebook: '#',
-  telegram: 'https://t.me/justescrow_io',
+  telegram: 'https://t.me/justescrow',
   bitcointalk: '#',
   discord: '#',
   reddit: '#',
@@ -4079,7 +4079,7 @@ var seo = {
     medium: 'https://medium.com/@swaponline',
     twitter: 'https://twitter.com/justescrow_io',
     facebook: 'https://www.facebook.com/SwapOnlineTeam',
-    telegram: 'https://t.me/justescrow_io',
+    telegram: 'https://t.me/justescrow',
     email: 'info@swaponline.io',
     mainUrl: 'https://swaponline.io',
     logo: 'https://screenshots.wpmix.net/chrome_2019-03-28_18-55-506746c4c5-44e6-4bb5-89cb-52ce8fabcedf.png'
@@ -68777,13 +68777,13 @@ function (_Component) {
         href: locale.toUpperCase() === '' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
         onClick: function onClick(e) {
-          _this2.switchLang(e, 'EN');
+          _this2.switchLang(e, '');
 
           return false;
         }
       }, _react.default.createElement(_reactIntl.FormattedMessage, {
         id: "SwitchLang20",
-        defaultMessage: "EN "
+        defaultMessage: " "
       })), "|", _react.default.createElement("a", {
         href: locale.toUpperCase() === '' ? "#".concat((0, _locale.relocalisedUrl)(locale)) : undefined,
         styleName: "language",
