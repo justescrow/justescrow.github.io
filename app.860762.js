@@ -38628,7 +38628,7 @@ var defaultStartPack = [{
   name: "ETH",
   capture: "Ethereum"
 }, {
-  name: "Litecoin",
+  name: "litecoin",
   capture: "LTC"
 }, {
   name: "USDT",
