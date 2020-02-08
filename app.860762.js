@@ -38635,8 +38635,8 @@ var defaultStartPack = [{
   name: "ETH",
   capture: "Ethereum"
 }, {
-  name: "SWAP",
-  capture: "Swap"
+  name: "Litecoin",
+  capture: "LTC"
 }, {
   name: "USDT",
   capture: "Tether"
