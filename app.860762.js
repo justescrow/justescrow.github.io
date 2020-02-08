@@ -37381,25 +37381,25 @@ exports.default = _default;
 /* 2264 */
 /***/ (function(module, exports) {
 
-module.exports = "https://swaponline.github.io/images/base_2238d1.svg";
+module.exports = "https://justescrow.github.io/images/logo-colored_fe8262.svg";
 
 /***/ }),
 /* 2265 */
 /***/ (function(module, exports) {
 
-module.exports = "https://swaponline.github.io/images/baseColored_eb1f60.svg";
+module.exports = "https://justescrow.github.io/images/logo-colored_fe8262.svg";
 
 /***/ }),
 /* 2266 */
 /***/ (function(module, exports) {
 
-module.exports = "https://swaponline.github.io/images/swapOnline_2238d1.svg";
+module.exports = "https://justescrow.github.io/images/logo-colored_fe8262.svg";
 
 /***/ }),
 /* 2267 */
 /***/ (function(module, exports) {
 
-module.exports = "https://swaponline.github.io/images/swapOnlineColored_88a295.svg";
+module.exports = "https://justescrow.github.io/images/logo-colored_fe8262.svg";
 
 /***/ }),
 /* 2268 */
